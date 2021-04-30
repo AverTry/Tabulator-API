@@ -204,7 +204,7 @@ var table = new Tabulator("#example-table", {
     // groupStartOpen:false,
     history:true,
     pagination:"remote",
-    ajaxURL:`http://localhost:3000/api`,
+    ajaxURL:`https://tabulator-api.avertry.repl.co/api`,
     ajaxFiltering:true,
     ajaxSorting:true,
     // ajaxConfig:"POST",
