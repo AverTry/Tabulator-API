@@ -24,4 +24,4 @@ Visit this link to try it out:
 
 [https://avertry.github.io/Tabulator-API/](https://avertry.github.io/Tabulator-API/)
 
-See Update Log for recent changes.
+Setting up repo ( under construction)
