@@ -1,0 +1,19 @@
+{
+  "name": "tabulator-api",
+  "version": "0.0.5",
+  "description": "A Better Example",
+  "main": "server.js",
+  "scripts": {
+    "devStart": "nodemon server.js"
+  },
+  "keywords": [],
+  "author": "AverTry",
+  "license": "Free To Use",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "extend": "^3.0.2",
+    "mongoose": "^5.10.10"
+  }
+}

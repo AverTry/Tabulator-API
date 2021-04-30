@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabulator API Build</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="./css/tabulator_bootstrap4.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
+    <link rel="stylesheet" href="./css/style.css">
+    <script src="./js/moment.min.js" defer></script>
+    <script src="./js/tabulator.min.js" defer></script>
+    <script type="text/javascript" src="https://oss.sheetjs.com/sheetjs/xlsx.full.min.js" defer></script>
+
+    <!-- <script src="./js/table.js" defer></script> -->
+    <script src="./js/selection-workaround.js" defer></script>
+    <style>
+        .dropdown {
+            margin-left: 10px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 550px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            padding: 12px 16px;
+            z-index: 1;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+<h1>Tabulator API Build</h1>
+<div>
+    <button id="history-undo">Undo Edit</button>
+    <button id="history-redo">Redo Edit</button>
+    <button id="select-visible">Select Visible</button>
+    <button id="select-page">Select All</button>
+    <button id="deselect-all">Deselect All</button>
+    
+    <span id="select-stats"></span>
+</div>
+<!-- <br>
+<div>
+    <button id="resetColumns">Reset Columns</button>
+    <button id="resetSort">Reset Sort</button>
+    <button id="resetFilter">Reset Filter</button>
+    <button id="resetPage">Reset Page</button>
+    &nbsp;
+    <button id="resetFull">Full Reset</button>
+</div> -->
+<br>
+<div>
+    <button id="download-csv">Download CSV</button>
+    <button id="download-xlsx">Download XLSX</button>
+    <button id="download-html">Download HTML</button>
+    <button id="print-table">Print Table</button>
+</div>
+<br>
+<div>
+    <select id="filter-field">
+        <option></option>
+        <option value="id">id</option>
+        <option value="Company">Company</option>
+        <option value="Status">Status</option>
+        <option value="Prefix">Prefix</option>
+        <option value="FirstName">FirstName</option>
+        <option value="LastName">Last Name</option>
+        <option value="City">City</option>
+    </select>
+
+    <select id="filter-type">
+        <option value="=">=</option>
+        <option value="<"><</option>
+        <option value="<="><=</option>
+        <option value=">">></option>
+        <option value=">=">>=</option>
+        <option value="!=">!=</option>
+        <option value="like">like</option>
+    </select>
+
+    <input id="filter-value" type="text" placeholder="value to filter">
+    <button id="filter-clear">Clear Filter</button>
+    <button id="header-filters-clear">Clear Column Filters</button>
+    <div class="dropdown">
+        <span>?</span>
+        <div class="dropdown-content">
+            <h3>Tabulator comes with a number of filter comparison types:</h3>
+            <ul>
+                <li> = - Displays only rows with data that is the same as the filter</li>
+                <li> < - Displays rows with a value less than the filter value</li>
+                <li> <= - Displays rows with a value less than or equal to the filter value</li>
+                <li> > - Displays rows with a value greater than the filter value</li>
+                <li> >= - Displays rows with a value greater than or equal to the filter value</li>
+                <li> != - Displays rows with a value that is not equal to the filter value</li>
+                <li> like - Displays any rows with data that contains the specified string anywhere in the specified field. (case insensitive)</li>
+            </ul>
+        </div>
+    </div>
+
+</div>
+<div id="example-table"></div>
+</body>
+</html>
