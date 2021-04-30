@@ -27,7 +27,7 @@
   
   .tabulator .tabulator-footer .tabulator-page.active {
     border-color: #82b534 !important;
-    background-color: #9fb6b2 !important;
+    background-color: #769bcc !important;
     color: #e7cfc3 !important;
   }
 
@@ -168,7 +168,7 @@
     padding: 8px;
     border-radius: 5px;
     border: none;
-    background: #c1d3c4 !important;
+    background: #bfd0e6 !important;
     font-size: 14px;
     font-weight: 600;
     color: #6d8289 !important;
