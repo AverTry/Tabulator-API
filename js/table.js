@@ -204,6 +204,7 @@ var table = new Tabulator("#example-table", {
     // groupStartOpen:false,
     history:true,
     pagination:"remote",
+    // ajaxURL:`http://localhost:3000/api`,
     ajaxURL:`https://tabulator-api.avertry.repl.co/api`,
     ajaxFiltering:true,
     ajaxSorting:true,
@@ -301,11 +302,11 @@ var table = new Tabulator("#example-table", {
             title:"Status",
             headerMenu:headerMenu, //add a menu to this column header
             columns:[
-                {title:"Created On", field:"AccountCreated", headerFilter:"input", headerFilterLiveFilter:false, headerFilterPlaceholder:"dd/mm/yyyy", headerFilterFunc:"dates", headerSortTristate:true, width:130, visible:true,  
+                {title:"Created On", field:"CreatedOn", headerFilter:"input", headerFilterLiveFilter:false, headerFilterPlaceholder:"dd/mm/yyyy", headerFilterFunc:"dates", headerSortTristate:true, width:130, visible:true,  
                     sorter:"date", sorterParams:{ format:"YYYY-MM-DD", alignEmptyValues:"top" }, 
                     formatter:"datetime", formatterParams:{ inputFormat:"YYYY-MM-DD HH:ii", outputFormat:"DD/MM/YYYY", invalidPlaceholder:"(invalid date)" }, headerTooltip:'Press \"Enter\" to search or clear'
                 },
-                {title:"Edited On", field:"LastUpdated", headerFilter:"input", headerFilterLiveFilter:false, headerFilterPlaceholder:"dd/mm/yyyy", headerFilterFunc:"dates", headerSortTristate:true, width:130, visible:true, editor:dateEditor,  
+                {title:"Edited On", field:"EditedOn", headerFilter:"input", headerFilterLiveFilter:false, headerFilterPlaceholder:"dd/mm/yyyy", headerFilterFunc:"dates", headerSortTristate:true, width:130, visible:true, editor:dateEditor,  
                     sorter:"date", sorterParams:{ format:"YYYY-MM-DD", alignEmptyValues:"top" }, 
                     formatter:"datetime", formatterParams:{ inputFormat:"YYYY-MM-DD HH:ii", outputFormat:"DD/MM/YYYY", invalidPlaceholder:"(invalid date)" }, headerTooltip:'Press \"Enter\" to search or clear', 
                     editable:false, cellDblClick:function(e, cell){cell.edit(true)}

@@ -5,6 +5,7 @@ const Schema = mongoose.Schema;
 const infoSchema = new Schema({
   id: {type: Number, required: true, unique: true, ref: 'id'},
   Status: {type: String, required: true, default: 'Choose...'},
+  Company: {type: String, default: ''},
   Prefix: {type: String, required: true, default: 'Choose...'},
   FirstName: {type: String, required: false, trim: true, default: ''},
   LastName: {type: String, required: false, trim: true, default: ''},
@@ -14,9 +15,7 @@ const infoSchema = new Schema({
   County: {type: String, required: false, trim: true, default: ''},
   PostCode: {type: String, required: false, trim: true, default: ''},
   Country: {type: String, required: false, trim: true, default: ''},
-  Info: [{Comments: String, Charts: String, _id: false }],
-  Files: [{Documents: {type: String, default: ''}, _id: false }],
-  Company: {type: String, default: ''},
+  Tag : { type: Boolean, default: true },
   LastMeeting: {type: Date, default: ''},
   NextMeeting: {type: Date, default: ''},
   BusinessLine: {type: String, default: ''},
@@ -25,9 +24,10 @@ const infoSchema = new Schema({
   Email: {type: String, default: ''},
   WebSite: {type: String, default: ''},
   FaceBook: {type: String, default: ''},
-  Tag : { type: Boolean, default: true }
+  Info: [{Comments: String, Charts: String, _id: false }],
+  Files: [{Documents: {type: String, default: ''}, _id: false }]
 },{
-  timestamps: { createdAt: 'AccountCreated', updatedAt: 'LastUpdated' }
+  timestamps: { createdAt: 'CreatedOn', updatedAt: 'EditedOn' }
 , 
   versionKey: false 
 })

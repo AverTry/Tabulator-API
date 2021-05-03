@@ -101,6 +101,7 @@ app.post('/api/create', async (req, res) => {
   const info = new Info({
     id: req.body.id,
     Status: req.body.Status,
+    Company: req.body.Company,
     Prefix: req.body.Prefix,
     FirstName: req.body.FirstName,
     LastName: req.body.LastName,
@@ -110,19 +111,17 @@ app.post('/api/create', async (req, res) => {
     County: req.body.County,
     PostCode: req.body.PostCode,
     Country: req.body.Country,
-    Company: req.body.Company,
-    Info: [{Comments: req.body.Comments, Charts: req.body.Charts}],
-    Files: [{Documents: req.body.Documents,}],
-    AccountCreated: req.body.AccountCreated,
-    LastMeeting: req.body.LastMeeting,
-    NextMeeting: req.body.NextMeeting,
+    Tag: req.body.Tag,
     BusinessLine: req.body.BusinessLine,
     HomePhone: req.body.HomePhone,
     MobilePhone: req.body.MobilePhone,
     Email: req.body.Email,
     WebSite: req.body.WebSite,
     FaceBook: req.body.FaceBook,
-    Tag: req.body.Tag
+    LastMeeting: req.body.LastMeeting,
+    NextMeeting: req.body.NextMeeting,
+    Info: [{Comments: req.body.Comments, Charts: req.body.Charts}],
+    Files: [{Documents: req.body.Documents,}]
   })
   try {
     const newInfo = await info.save()

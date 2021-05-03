@@ -2,3 +2,4 @@ server/node_modules
 js/selection-workaround.js
 js/type_of.js
 server/.env
+server/package-lock.json
